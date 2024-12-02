@@ -1,5 +1,5 @@
 # cs596final
-In this project, our goal is to study how parallel processing techniques can improve the efficiency and training speed of LSTM models, a type of Recurrent Neural Network (RNN). We will benchmark the efficiency of training the same model using GPU-based computing compared to CPU-based computing, focusing on how GPU acceleration reduces training time. Additionally, we will evaluate the performance of different GPUs, such as Nvidia T40 and A100, to analyze their impact on model training efficiency.
+In this project, our goal is to study how parallel processing techniques can improve the training speed of LSTM models, a type of Recurrent Neural Network (RNN). We will benchmark the efficiency of training the same model using GPU-based computing compared to CPU-based computing, focusing on how GPU acceleration reduces training time. Additionally, we will evaluate the performance of different GPUs, such as Nvidia T40 and A100, to analyze their impact on model training efficiency.
 
 # Team
 * Wen Lin
