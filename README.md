@@ -22,7 +22,8 @@ Google Cloud Link: https://cloud.google.com/storage/docs/public-datasets/era5
 ## Task to solve
 Predict temperature for a certain place (????)
 
-Since weather data is continuous in nature and has strong time dependencies, which LSTMs are designed to handle. 
+Since weather data is continuous and has strong time dependencies, LSTMs are designed to handle this. 
 
 # Parallel Strategy
-There are seveal parallel strategies for improving the efficiency of LSTM models, such as data parallelism, model parallelism, temporal parallelism, among others. In this project, we are using data parallelism which Split the dataset into smaller chunks and process them in parallel on multiple devices.
+There are several parallel strategies for improving the efficiency of LSTM models, such as data parallelism, model parallelism, and temporal parallelism, among others. In this project, we are using data parallelism, which splits the dataset into smaller chunks and processes them in parallel on multiple devices.
+![strategy image](strategy.png)
