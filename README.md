@@ -71,9 +71,9 @@ We use Google Colab to run our models on a Tesla T4 GPU configuration, while on 
     df = subset_temperature_computed.to_dataframe().reset_index()
     df.to_csv("subset_temperature.csv", index=False)
     ```
-- then we training the model can calculate the time of training.
+- then we train the model can calculate the time of training.
 
-## Run in CARC
+## Run on CARC in JupyterLab
 - if you are running the code in CARC, you can ignore the following code:
 ![alt text](carc_ignore_code.png)
 
