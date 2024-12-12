@@ -30,11 +30,52 @@ There are several parallel strategies for improving the efficiency of LSTM model
 
 
 
+# Code analysis and configuration environment explanation
+## We use Google Colab to run our models on a Tesla T4 GPU configuration, while for the NVIDIA V100 GPUs, we utilize the computing resources provided by CARC. For CPU-based tasks, both Colab and CARC platforms are suitable options depending on the computational requirements and availability
 
-# CPU
+## Run in Google colab (Tesla T4 GPU or CPU)
+- Change your runtime type to certain type(T4 or CPU)
+- if you are trying to run in the google colab, you have to import all these libraries for the enviorment set up
+    ```python
+    !pip install --upgrade xarray zarr gcsfs google-auth
+    import xarray as xr
+    import gcsfs
+    import pandas as pd
+    import numpy as np
+    import torch
+    import torch.nn as nn
+    from torch.utils.data import Dataset, DataLoader
+    from datetime import datetime
+    import matplotlib.pyplot as plt
+    ```
+  - xarray and zarr: For efficient loading and manipulation of large multi-dimensional arrays.
+  - gcsfs: Provides filesystem-like access to data in Google Cloud Storage.
+  - torch: The PyTorch library, used for building and training neural networks.
+  pandas, numpy, matplotlib: For data processing and plotting.
 
-# GPU
-## T4
+- Next, the code uses Google Colab's authentication service to access data stored on Google Cloud Storage, loading the ERA5 climate dataset:
+    ```python
+    from google.colab import auth
+    auth.authenticate_user()
+
+    try:
+        era5 = xr.open_zarr("gs://gcp-public-data-arco-era5/ar/1959-2022-full_37-1h-0p25deg-chunk-1.zarr-v2", chunks={'time': 48}, consolidated=True)
+        print("Dataset loaded successfully!")
+    except Exception as e:
+        print("Error loading dataset:", e)
+    ```
+- The code selects temperature data for specific geographic locations and time periods from the dataset and processes it:
+    ```python
+    subset_temperature = era5['2m_temperature'].sel(latitude=[40.0, 20.0], longitude=280.0, time=slice("2020-01-01", "2021-06-30"))
+    subset_temperature_computed = subset_temperature.compute()
+    df = subset_temperature_computed.to_dataframe().reset_index()
+    df.to_csv("subset_temperature.csv", index=False)
+    ```
+- then we training the model can calculate the time of training.
+
+## Run in carc
+- if you are running the code in carc, you can ignore the following code:
+![alt text](image.png)
 
 |  | CPU | T4 |
 |-------|-------|-------|
