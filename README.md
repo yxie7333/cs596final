@@ -1,5 +1,5 @@
 # CSCI-596 Final Project
-In this project, our goal is to study how parallel processing techniques can improve the training speed of LSTM models, a type of Recurrent Neural Network (RNN). We will benchmark the efficiency of training the same model using GPU-based computing compared to CPU-based computing, focusing on how GPU acceleration reduces training time. Additionally, we will evaluate the performance of different GPUs, such as Nvidia T40 and A100, to analyze their impact on model training efficiency.
+In this project, our goal is to study how parallel processing techniques can improve the training speed of LSTM models, a type of Recurrent Neural Network (RNN). We will benchmark the efficiency of training the same model using GPU-based computing compared to CPU-based computing, focusing on how GPU acceleration reduces training time. Additionally, we will evaluate the performance of different GPUs, such as Nvidia T40, P100, V100, A40, and A100, to analyze their impact on model training efficiency.
 
 # Team
 * Wen Lin
@@ -31,7 +31,7 @@ There are several parallel strategies for improving the efficiency of LSTM model
 
 
 # Code analysis and configuration environment explanation
-We use Google Colab to run our models on a Tesla T4 GPU configuration, while for the NVIDIA V100 GPUs, we utilize the computing resources provided by CARC. For CPU-based tasks, both Colab and CARC platforms are suitable options depending on the computational requirements and availability
+We use Google Colab to run our models on a Tesla T4 GPU configuration, while on CARC, we run models using NVIDIA P100, V100, A40, and A100 GPU configurations. For CPU-based tasks, both Colab and CARC platforms are suitable options depending on the computational requirements and availability
 
 ## Run in Google colab (Tesla T4 GPU or CPU)
 - Change your runtime type to certain type(T4 or CPU)
@@ -73,9 +73,13 @@ We use Google Colab to run our models on a Tesla T4 GPU configuration, while for
     ```
 - then we training the model can calculate the time of training.
 
-## Run in carc
-- if you are running the code in carc, you can ignore the following code:
-![alt text](image.png)
+## Run in CARC
+- if you are running the code in CARC, you can ignore the following code:
+![alt text](carc_ignore_code.png)
+
+# Result
+## Comparison
+
 
 |  | CPU | T4 |
 |-------|-------|-------|
