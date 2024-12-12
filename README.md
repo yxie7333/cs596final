@@ -27,3 +27,17 @@ Since weather data is continuous and has strong time dependencies, LSTMs are des
 # Parallel Strategy
 There are several parallel strategies for improving the efficiency of LSTM models, such as data parallelism, model parallelism, and temporal parallelism, among others. In this project, we are using data parallelism, which splits the dataset into smaller chunks and processes them in parallel on GPUs, as illustrated in the figure below.
 ![strategy image](strategy.png)
+
+
+
+
+# CPU
+
+# GPU
+## T4
+
+|  | CPU | T4 |
+|-------|-------|-------|
+| Epoch | 5 | 5 |
+| runtime | 46.64s | 6.62s |
+
