@@ -35,7 +35,7 @@ We use Google Colab to run our models on a Tesla T4 GPU configuration, while on 
 
 ## Run in Google colab (Tesla T4 GPU or CPU)
 - Change your runtime type to certain type(T4 or CPU)
-- if you are trying to run in the google colab, you have to import all these libraries for the enviorment set up
+- if you are trying to run on the google colab, you have to import all these libraries for the enviorment set up
     ```python
     !pip install --upgrade xarray zarr gcsfs google-auth
     import xarray as xr
@@ -79,10 +79,12 @@ We use Google Colab to run our models on a Tesla T4 GPU configuration, while on 
 
 # Result
 ## Comparison
+- ### num_work = 2
+  |  | CPU | T4 | P100 | V100 | A40 |
+  |-------|-------|-------|-------|-------|-------|
+  | Epoch=5 | 46.42 | 6.62 | 7.39 | 5.67 | 4.34 | 
+  | Epoch=10 | 94.34 | 98.20 | 7.39 | 8.61 | 6.49 | 
+  | Epoch=15 | 146.41 | 125.33 | 10.04 | 11.89 | 9.58 | 
 
-
-|  | CPU | T4 |
-|-------|-------|-------|
-| Epoch | 5 | 5 |
-| runtime | 46.64s | 6.62s |
-
+- FACT:
+  -  We executed our code using a CPU and a T4 GPU on Google Colab, and P100, V100, and A40 GPUs on the CARC platform. The CARC GPUs benefit from caching, significantly enhancing their performance compared to Google Colab, where the lack of caches results in slower speeds, particularly as the number of epochs increases.
