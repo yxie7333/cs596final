@@ -96,11 +96,5 @@ We use Google Colab to run our models on a Tesla T4 GPU configuration, while on 
   | Epoch=15 | 146.41 | 125.33 | 10.04 | 11.89 | 9.58 | 
 
 
-|  | CPU | T4 |
-|-------|-------|-------|
-| Epoch | 5 | 5 |
-| runtime | 46.64s | 6.62s |
-
-
 ![Performance Comparison](Performance Comparison.png)
 
