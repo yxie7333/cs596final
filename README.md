@@ -1,5 +1,5 @@
 # CSCI-596 Final Project
-In this project, our goal is to study how parallel processing techniques can improve the training speed of LSTM models, a type of Recurrent Neural Network (RNN). We will benchmark the efficiency of training the same model using GPU-based computing compared to CPU-based computing, focusing on how GPU acceleration reduces training time. Additionally, we will evaluate the performance of different GPUs, such as Nvidia T40, P100, V100, A40, and A100, to analyze their impact on model training efficiency.
+In this project, our goal is to study how parallel processing techniques can improve the training speed of LSTM models, a type of Recurrent Neural Network (RNN). We will benchmark the efficiency of training the same model using GPU-based computing compared to CPU-based computing, focusing on how GPU acceleration reduces training time. Additionally, we will evaluate the performance of different GPUs, such as Nvidia T4, P100, V100, and A40, to analyze their impact on model training efficiency.
 
 # Team
 * Wen Lin
@@ -82,12 +82,11 @@ We use Google Colab to run our models on a Tesla T4 GPU configuration, while on 
 - Next, follow the instructions on this website to start an interactive session.[CARC Interactive Apps](https://www.carc.usc.edu/user-guides/carc-ondemand/interactive-apps.html)
 ![CARC JupyterLab Requirement-1](CARC-JupyterLab-requirement-1.png)
 ![CARC JupyterLab Requirement-2](CARC-JupyterLab-requirment-2.png)
-- For our experiment, we choose Partition as GPU, Numbers of CPU is 2, GPU model can change to P100, V100, A40 and A100, Number of GPU is 1.
+- For our experiment, we choose Partition as GPU, Numbers of CPU is 2, GPU model can change to P100, V100 and A40, Number of GPU is 1.
 - if you are running the code in CARC, you can ignore the following code:
 ![alt text](carc_ignore_code.png)
 
 # Result
-## Comparison
 - ### num_work = 2
   |  | CPU | T4 | P100 | V100 | A40 |
   |-------|-------|-------|-------|-------|-------|
