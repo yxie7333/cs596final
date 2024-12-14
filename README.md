@@ -74,6 +74,15 @@ We use Google Colab to run our models on a Tesla T4 GPU configuration, while on 
 - then we train the model can calculate the time of training.
 
 ## Run on CARC in JupyterLab
+- Environment requirement:
+  - pytorch 2.5.0
+  - cuda 11.8.0
+  - CUDA toolkit
+- To use JupyterLab on CARC, you first need to install Jupyter kernels. Follow the instructions on this website to create a new Jupyter kernel.[CARC Installing Jupyter Kernels](https://www.carc.usc.edu/user-guides/hpc-systems/software/jupyter-kernels.html)
+- Next, follow the instructions on this website to start an interactive session.[CARC Interactive Apps](https://www.carc.usc.edu/user-guides/carc-ondemand/interactive-apps.html)
+![CARC JupyterLab Requirement-1](CARC-JupyterLab-requirement-1.jpg)
+![CARC JupyterLab Requirement-2](CARC-JupyterLab-requirement-2.jpg)
+- For our experiment, we choose Partition as GPU, Numbers of CPU is 2, GPU model can change to P100, V100, A40 and A100, Number of GPU is 1.
 - if you are running the code in CARC, you can ignore the following code:
 ![alt text](carc_ignore_code.png)
 
