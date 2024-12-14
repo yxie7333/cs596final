@@ -95,6 +95,14 @@ We use Google Colab to run our models on a Tesla T4 GPU configuration, while on 
   | Epoch=10 | 94.34 | 98.20 | 7.39 | 8.61 | 6.49 | 
   | Epoch=15 | 146.41 | 125.33 | 10.04 | 11.89 | 9.58 | 
 
-
 ![Performance Comparison](Performance Comparison.png)
 
+# Discussion
+Based on the results presented in the table, we can draw the following conclusions in relation to our project goal of studying parallel processing techniques for improving LSTM model training speed:
+1. GPU Acceleration vs. CPU:
+   - The results clearly demonstrate that GPU-based computing significantly reduces training time compared to CPU-based computing across all tested scenarios. For example, for Epoch=5, the CPU took 46.42 seconds, whereas the GPUs (T4, P100, V100, A40) reduced the time to the range of 4.34 to 7.39 seconds, showcasing the effectiveness of parallel processing on GPUs. Moreover, this trend is consistent as the number of epochs increases, highlighting the scalability of GPU acceleration for larger training tasks.
+2. Performance Comparison Between GPUs:
+   - Among the tested GPUs: as we expected, the A40 GPU consistently outperformed the others, achieving the fastest training times across all epoch settings. However, it was unexpected that the P100 outperformed both the V100 and T4 in terms of training speed as the number of epochs increased. We believe this may be due to the P100’s higher memory bandwidth (732 GB/s) being more effectively utilized under our specific workload. While the V100 has a higher memory bandwidth (900 GB/s), its advantage might not be fully realized if the workload involves smaller batch sizes. Additionally, since our model uses 2 CPUs for data transfer, the V100’s faster processing speed could lead to idle time as it waits for data, thereby nullifying its computational advantage.
+
+# Conclusion
+Using our benchmarking framework, we were able to analyze the training performance of LSTM models on various GPUs and CPUs. We found that parallel processing techniques significantly improve the training speed of LSTM models by leveraging the computational power of GPUs. 
