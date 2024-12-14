@@ -95,7 +95,7 @@ We use Google Colab to run our models on a Tesla T4 GPU configuration, while on 
   | Epoch=10 | 94.34 | 98.20 | 7.39 | 8.61 | 6.49 | 
   | Epoch=15 | 146.41 | 125.33 | 10.04 | 11.89 | 9.58 | 
 
-![Performance Comparison](Performance Comparison.png)
+![Performance Comparison](Performance-Comparison.png)
 
 # Discussion
 Based on the results presented in the table, we can draw the following conclusions in relation to our project goal of studying parallel processing techniques for improving LSTM model training speed:
